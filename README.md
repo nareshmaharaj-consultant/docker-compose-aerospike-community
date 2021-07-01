@@ -1,0 +1,1 @@
+# docker-compose-aerospike-community
