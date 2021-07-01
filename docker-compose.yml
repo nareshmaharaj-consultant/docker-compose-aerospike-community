@@ -1,0 +1,24 @@
+version: "3.7"
+
+services:
+  aerospike:
+    image: aerospike/aerospike-server
+    container_name: aerospike
+    ports:
+      - 3000:3000
+      - 3001:3001
+      - 3002:3002
+    volumes:
+      - aerospike-etc:/opt/aerospike/etc/
+      - aerospike-data:/opt/aerospike/data
+    environment:
+     - NAMESPACE=insurance
+    networks:
+      testnet:
+        aliases:
+          - aerospike_net
+volumes:
+  aerospike-etc:
+  aerospike-data:  
+networks:
+  testnet:
